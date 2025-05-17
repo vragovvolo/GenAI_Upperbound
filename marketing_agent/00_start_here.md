@@ -13,10 +13,10 @@ But it does a couple of extra things:
 Follow the notebooks in the repo in order. 
 All of the notebooks are designed to work with and tested on Serverless compute.
 
-`01_data`: Loads the marketing dbdemo and runs batch inference to get the data ready.
-`02_tools`: Sets up the SQL functions and vector search
-`03_deploy`: Goes over the agent code and deploys it
-`04_evaluate`: Tests our agent using the Mosaic Agent Evaluation framework
+- `01_data`: Loads the marketing dbdemo and runs batch inference to get the data ready.
+- `02_tools`: Sets up the SQL functions and vector search
+- `03_deploy`: Goes over the agent code and deploys it
+- `04_evaluate`: Tests our agent using the Mosaic Agent Evaluation framework
 
 ## Gotchas
 There are two critical things you have to change when running the code:
