@@ -59,7 +59,7 @@ target/
 *.dbc
 *.dbml
 # (Optional) Ignore exported notebook files
-*.ipynb
+# *.ipynb  # Allowing .ipynb files to be tracked
 
 # IPython
 profile_default/
