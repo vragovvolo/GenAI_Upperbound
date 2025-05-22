@@ -75,7 +75,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC   issue_category, 
 # MAGIC   issue_description, 
 # MAGIC   name
-# MAGIC FROM retail_prod.agents.cust_service_data 
+# MAGIC FROM cjc.agents.cust_service_data 
 # MAGIC -- Order the results by the interaction date and time in descending order
 # MAGIC ORDER BY date_time DESC
 # MAGIC -- Limit the results to the most recent interaction
@@ -99,7 +99,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC     issue_category, 
 # MAGIC     issue_description, 
 # MAGIC     name
-# MAGIC   FROM retail_prod.agents.cust_service_data 
+# MAGIC   FROM cjc.agents.cust_service_data 
 # MAGIC   ORDER BY date_time DESC
 # MAGIC   LIMIT 1
 # MAGIC )
@@ -131,7 +131,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC LANGUAGE SQL
 # MAGIC RETURN 
 # MAGIC SELECT policy, policy_details, last_updated 
-# MAGIC FROM retail_prod.agents.policies
+# MAGIC FROM cjc.agents.policies
 # MAGIC WHERE policy = 'Return Policy'
 # MAGIC LIMIT 1;
 
@@ -162,7 +162,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC LANGUAGE SQL
 # MAGIC RETURN 
 # MAGIC SELECT customer_id 
-# MAGIC FROM retail_prod.agents.cust_service_data 
+# MAGIC FROM cjc.agents.cust_service_data 
 # MAGIC WHERE name = user_name
 # MAGIC LIMIT 1
 # MAGIC ;
@@ -194,7 +194,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC LANGUAGE SQL
 # MAGIC RETURN 
 # MAGIC SELECT count(*) as returns_last_12_months, issue_category 
-# MAGIC FROM retail_prod.agents.cust_service_data 
+# MAGIC FROM cjc.agents.cust_service_data 
 # MAGIC WHERE customer_id = user_id 
 # MAGIC GROUP BY issue_category;
 
@@ -274,3 +274,7 @@ display(HTML(html_link))
 # Create HTML link to AI Playground
 html_link = f'<a href="https://{workspace_url}/ml/playground" target="_blank">Go to AI Playground</a>'
 display(HTML(html_link))
+
+# COMMAND ----------
+
+
