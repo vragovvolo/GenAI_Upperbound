@@ -1,0 +1,16 @@
+catalog: cjc
+schema: marketing
+products_table: products
+fixed_camp_table: campaigns_fixed
+fm_endpoint_name: databricks-meta-llama-3-3-70b-instruct
+em_endpoint_name: databricks-gte-large-en
+genie_agent_description: This genie agent can answer questions about marketing campaigns including click through rates, emails, and marketing slogans
+genie_secret_scope: shm
+genie_secret_key: genie_token
+creator_agent_description: This agent generates new marketing slogans and campaign ideas inspired by previous campaigns
+max_supervisor_worker_iterations: 3
+supervisor_agent_prompt: |
+  Decide between routing between the following workers or ending the conversation if an answer is provided. If the user asks about historical info, opens, or how previous campaigns have performed use the Genie worker. If the user asks about creating new campaigns use the Creator worker.
+agent_name: 'marketing_agent'
+genie_space_id: 01f0347061fb1161979f07ea9e7d61a8
+vector_search_endpoint: one-env-shared-endpoint-3
