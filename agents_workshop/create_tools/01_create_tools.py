@@ -37,9 +37,8 @@ w = WorkspaceClient()
 user_email = w.current_user.me().display_name
 username = user_email.split("@")[0]
 
-# Catalog and schema have been automatically created thanks to lab environment
 #catalog_name = f"{username}_vocareum_com"
-catalog_name = "retail_prod"
+catalog_name = "cjc" # replace with upperbound or name of your catalog
 schema_name = "agents"
 
 workspace_id = str(w.get_workspace_id())
