@@ -38,7 +38,7 @@ user_email = w.current_user.me().display_name
 username = user_email.split("@")[0]
 
 #catalog_name = f"{username}_vocareum_com"
-catalog_name = "cjc" # replace with upperbound or name of your catalog
+catalog_name = "upperbound" # replace with upperbound or name of your catalog
 schema_name = "agents"
 
 workspace_id = str(w.get_workspace_id())
@@ -75,7 +75,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC   issue_category, 
 # MAGIC   issue_description, 
 # MAGIC   name
-# MAGIC FROM cjc.agents.cust_service_data 
+# MAGIC FROM upperbound.agents.cust_service_data 
 # MAGIC -- Order the results by the interaction date and time in descending order
 # MAGIC ORDER BY date_time DESC
 # MAGIC -- Limit the results to the most recent interaction
@@ -99,7 +99,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC     issue_category, 
 # MAGIC     issue_description, 
 # MAGIC     name
-# MAGIC   FROM cjc.agents.cust_service_data 
+# MAGIC   FROM upperbound.agents.cust_service_data 
 # MAGIC   ORDER BY date_time DESC
 # MAGIC   LIMIT 1
 # MAGIC )
@@ -131,7 +131,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC LANGUAGE SQL
 # MAGIC RETURN 
 # MAGIC SELECT policy, policy_details, last_updated 
-# MAGIC FROM cjc.agents.policies
+# MAGIC FROM upperbound.agents.policies
 # MAGIC WHERE policy = 'Return Policy'
 # MAGIC LIMIT 1;
 
@@ -162,7 +162,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC LANGUAGE SQL
 # MAGIC RETURN 
 # MAGIC SELECT customer_id 
-# MAGIC FROM cjc.agents.cust_service_data 
+# MAGIC FROM upperbound.agents.cust_service_data 
 # MAGIC WHERE name = user_name
 # MAGIC LIMIT 1
 # MAGIC ;
@@ -194,7 +194,7 @@ spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
 # MAGIC LANGUAGE SQL
 # MAGIC RETURN 
 # MAGIC SELECT count(*) as returns_last_12_months, issue_category 
-# MAGIC FROM cjc.agents.cust_service_data 
+# MAGIC FROM upperbound.agents.cust_service_data 
 # MAGIC WHERE customer_id = user_id 
 # MAGIC GROUP BY issue_category;
 
